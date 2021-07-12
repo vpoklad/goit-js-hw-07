@@ -1,22 +1,14 @@
 
-const categoryListRef = document.querySelector('#categories');
-const categoryQuontity = categoryListRef.children.length;
-
-const itemsListRef = document.querySelectorAll('.item');
-const itemsListElementsRef = document.querySelectorAll('.item ul');
-
-console.log(`В списке ${categoryQuontity} категории.`);
+const categoryTitles = document.querySelectorAll('#categories h2');
 
 
-itemsListElementsRef.forEach((element) => {
-   const categoryTile = element.firstElementChild.textContent;
-    const itemsListQuntity = element.children.length
-    console.log(`Категория: ${categoryTile}`);
-    console.log(`Количество элементов: ${itemsListQuntity}`);  
+console.log(`В списке ${categoryTitles.length} категории.`);
+
+categoryTitles.forEach((element) => {
+    const itemList = element.parentNode.querySelectorAll('li');
+    console.log(`Категория: ${element.textContent}`);
+    console.log(`Количество элементов: ${itemList.length}`); 
 })
-
-
-
 
 
     
