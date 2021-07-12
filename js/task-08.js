@@ -15,13 +15,13 @@ inputNumberRef.addEventListener('input', (event) => {
 });
     
 buttonRenderRef.addEventListener('click', () => {
-    console.log('click create');   
+    
     createBoxes(amount)
 }
 )
 buttonDestroyRef.addEventListener('click', () => {
     targetDiv.innerHTML = '';
-    console.log('click on destroy');
+    
 })
 
 
