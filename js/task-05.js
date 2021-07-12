@@ -5,9 +5,8 @@ const textRef = document.querySelector('#name-output');
 inputRef.addEventListener('input', onInputText);
 
 function onInputText(event) {
-    if (this.value != ' ') {
-        textRef.textContent = event.currentTarget.value;
-    }
+    event.currentTarget.value.trim() ? textRef.textContent = event.currentTarget.value
+        : textRef.textContent = 'незнакомец'
     
     
     }
