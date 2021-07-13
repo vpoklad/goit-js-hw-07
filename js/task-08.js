@@ -7,10 +7,9 @@ const targetDiv = document.querySelector('#boxes');
 
 let amount = 0;
 
-inputNumberRef.addEventListener('input', (event) => {
+inputNumberRef.addEventListener('input', () => {
     
-    amount = inputNumberRef.valueAsNumber;
-   
+    amount = inputNumberRef.valueAsNumber;  
     
 });
     
@@ -19,8 +18,12 @@ buttonRenderRef.addEventListener('click', () => {
     createBoxes(amount)
 }
 )
+
+
+
 buttonDestroyRef.addEventListener('click', () => {
     targetDiv.innerHTML = '';
+    inputNumberRef.value = 0;
     
 })
 
@@ -31,7 +34,7 @@ function createBoxes(amount) {
     let G;
     let B;
     
-    
+    const boxes = [];
 
     for (let i = 0; i < amount; i += 1){
         size += 10;
@@ -41,11 +44,12 @@ function createBoxes(amount) {
         const newBox = document.createElement('div');
     newBox.style.backgroundColor = 'rgb(' + [R,G,B].join(',') + ')';
     newBox.style.width = `${size}px`
-    newBox.style.height = `${size}px`
-    targetDiv.appendChild(newBox);
+        newBox.style.height = `${size}px`
+        boxes.push(newBox);
+    
 
     }
-    
+    targetDiv.append(...boxes);
 }
 
 function getRandom(min, max) {
