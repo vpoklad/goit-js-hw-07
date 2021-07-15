@@ -6,6 +6,7 @@ inputSliderRef.addEventListener('input', onSliderInput)
 
 function onSliderInput(event) {
     let fontSize = event.currentTarget.value
+   
 
-    textResultRef.style.fontSize = fontSize.toString() + 'px';
+    textResultRef.style.fontSize = fontSize +'px';
 }
